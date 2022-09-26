@@ -1,0 +1,62 @@
+
+<div class="content">
+    <div class="header">
+      <div class="cotainer text-center">
+        <h2 class="title">
+          <i class="fa-solid fa-address-card"></i>
+          Contacts Details
+        </h2>
+        <small>Company's Contacts Information.</small>
+      </div>
+    </div>
+
+    <div class="d-flex mt-5">
+      <input
+        type="text"
+        class="form control w-25 m-1"
+        placeholder="Name"
+        [(ngModel)]="prodName"
+      />
+      <input
+        type="text"
+        class="form control w-25 m-1"
+        placeholder="Email"
+        [(ngModel)]="prodEmail"
+      />
+    </div>
+    <div
+      *ngIf="
+        contacts | filter: 'name':prodName | filter: 'email':prodEmail as contacts
+      "
+    >
+      <table class="table table-hover table-success">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Phones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let contact of contacts; index as i">
+            <tr>
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ contact.name }}</td>
+              <td>{{ contact.email }}</td>
+              <td>{{ contact.birthday }}</td>
+              <td>
+                <ul *ngIf="contact.phones?.length; else noPhones">
+                  <li *ngFor="let phone of contact.phones">{{ phone }}</li>
+                </ul>
+                <ng-template #noPhones>No Phones</ng-template>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,56 @@
+<body>
+    
+<div class="container my-5 mx-auto col-4">
+    <h1 class="text-center text-success text-bold"> <i class="fa-solid fa-database"></i> CRM APP</h1>
+    <form #loginForm="ngForm" (ngSubmit)="submitLogin()">
+        <div class="form-group">
+            <label for="email"> Email:</label>
+                <input 
+                    type="email"
+                    class="form-control" 
+                    id="email"
+                    name="email"
+                    email
+                    placeholder="Enter your Email"
+                    [(ngModel)]="user.email" 
+                    #email="ngModel"
+                    required
+                    minlength="6">
+                    <small *ngIf="email.invalid && email.touched"
+                    style="color: red;">Invalid Email</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password: </label>
+                <input 
+                    type="password" 
+                    class="form-control" 
+                    id="password" 
+                    name="password"
+                    placeholder="The password should contain 2-10 characters"
+                    [(ngModel)]="user.password" 
+                    #password="ngModel"
+                    required
+                    minlength="2"
+                    maxlength="10">
+                    <small *ngIf="user.password.length <=2"
+                    style="color: red;">Password Too Short</small>
+        </div>
+        <button 
+            class="btn btn-success mt-3 w-100"
+            type="submit"
+            [disabled]="loginForm.invalid">
+            Login
+        </button>
+    </form>
+    <button 
+            class="btn btn-success mt-3 w-100"
+            (click)="submitLoginWithGoogle()">
+            Login with Google
+    </button>
+    <p class="text-center mt-3">
+        <a  routerLink="/register">New User? Register Here!</a>
+    </p>
+    <br>
+    <footer class="text-center"> @2022 - Aluma Alon</footer>
+</div>
+</body>

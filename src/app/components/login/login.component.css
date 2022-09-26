@@ -1,0 +1,13 @@
+.ng-valid[required] {
+    border-left: 5px solid rgb(30,201,30);
+}
+
+.ng-invalid[required] {
+    border-left: 5px solid red;
+}
+
+body{
+    background-image: url("https://img.freepik.com/premium-vector/illustration-people-work-with-computers-vector-design_20029-1224.jpg");
+    background-repeat: no-repeat;
+    background-position: left;
+}
