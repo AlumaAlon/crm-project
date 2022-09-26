@@ -18,6 +18,10 @@ export class CustomersComponent implements OnInit {
   [x: string]: any;
 
   customers: Customer[] = [];
+  prodName: string = '';
+  prodLastName: string = '';
+  prodPhone: string = '';
+
   selectedCustomerForm = new FormGroup({
     id: new FormControl(''),
     firstName: new FormControl('', Validators.compose([Validators.required])),
@@ -105,4 +109,5 @@ export class CustomersComponent implements OnInit {
     });
     this.selectedCustomerForm.disable();
   }
+  
 }

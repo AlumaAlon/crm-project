@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Contact } from '../interfaces/Contact';
+import { Customer } from '../interfaces/Customer';
 
 @Pipe({
   name: 'filter'
@@ -10,7 +11,7 @@ export class FilterPipe implements PipeTransform {
      propName: keyof Contact,
       value: string
       ): Contact[] {
-        let proArr:Contact[]= [];
+        let proArr:Contact[] = [];
         for(let contact of contacts) {
           if (
             (contact[propName] as string)
@@ -21,7 +22,8 @@ export class FilterPipe implements PipeTransform {
           }
         }
         return proArr;
-
+        
   }
+
 
 }

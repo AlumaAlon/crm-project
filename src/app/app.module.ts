@@ -18,6 +18,7 @@ import { MainComponent } from './components/main/main.component';
 import { PnfComponent } from './components/pnf/pnf.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { CustomersPipe } from './pipes/customers.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     PnfComponent,
     ContactsComponent,
     FilterPipe,
+    CustomersPipe,
   ],
   imports: [
     BrowserModule,

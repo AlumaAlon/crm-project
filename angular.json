@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/crm-system",
+            "outputPath": "dist/crm-project",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -101,9 +101,9 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "crmSystem:build:production",
-            "firebaseProject": "crmsystemapp",
-            "firebaseHostingSite": "crmsystemapp"
+            "browserTarget": "angular-bfd0c:build:production",
+            "firebaseProject": "angular-bfd0c",
+            "firebaseHostingSite": "angular-bfd0c.web.app"
           }
         }
       }

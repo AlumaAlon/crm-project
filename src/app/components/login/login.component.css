@@ -11,3 +11,9 @@ body{
     background-repeat: no-repeat;
     background-position: left;
 }
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
